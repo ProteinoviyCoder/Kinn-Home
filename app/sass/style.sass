@@ -1,0 +1,492 @@
+@mixin fontText($size: 30px, $weight: 400, $lh: 25px)
+    font-size: $size
+    font-weight: $weight
+    line-height: $lh
+    
+    
+*,*::before,*::after
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+a
+    text-decoration: none
+    color: inherit
+
+ul
+    list-style-type: none
+
+
+body
+    font-family: 'Roboto', sans-serif
+    color: #56593D
+
+.wrapper
+    display: flex
+    flex-direction: column
+
+.container
+    max-width: 1360px
+    margin: 0 auto
+    background: #FFFFEF
+
+.header
+    border-top: 16px solid #FFFFEF
+    margin-bottom: 42px
+    text-transform: uppercase
+    .header__nav-list-mobile
+        display: none
+    
+
+    .header__nav
+        @include fontText($size: 16px, $weight: 400, $lh:25px )
+        background: #fff
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 40px
+        padding: 0 32px
+        margin-top: 32px
+
+        .header__nav-list
+            display: flex
+            justify-content: space-between
+            align-items: center
+            gap: 38px
+            .header__nav-item
+                display: flex
+                justify-content: space-between
+                align-items: center
+                gap: 5px
+                border-bottom: 1px solid rgba(1,1,1,0)
+                cursor: pointer
+                &:last-child
+                    margin-left:  96px
+                &:hover
+                    border-bottom: 1px solid #56593D   
+                    transition: 0.3s ease
+
+        .header__btn-list
+            display: flex
+            justify-content: space-between
+            align-items: center
+            gap: 20px
+            .header__btn-item
+                position: relative
+                cursor: pointer
+                &:hover
+                    transform: scale(107%)
+                    transition: 0.2s ease
+                #count-basket
+                    position: absolute
+                    bottom: 0
+                    right: 0
+                    padding: 2px 7px
+                    background: #FFFFEF
+                    border-radius: 100px
+                    transform: translateX(5px) translateY(7px)
+
+
+.shop-now
+    margin-bottom: 93px
+    .container
+        padding: 16px
+        margin-bottom: 87px
+        .shop-now__content
+            position: relative
+            .shop-now__img
+                width: 100%
+
+            .shop-now__text
+                position: absolute
+                bottom: 0
+                right: 0   
+                margin-bottom: 64px 
+                margin-right: 64px
+                text-align: end
+                & p
+                    @include fontText($size: 45px, $weight:400, $lh:60px)
+                    margin-bottom: 25px
+                    &:first-child
+                        @include fontText($size: 18px, $weight:400, $lh:21px)
+                        margin-bottom: 10px
+                & button
+                    border: none
+                    padding: 16px 25px        
+                    background: #56593D
+                    color: #FFFFEF
+                    @include fontText($size: 16px, $weight:400, $lh:22px)
+                    cursor: pointer
+                    border: 1px solid rgba(1,1,1,0)
+                    &:hover
+                        border: 1px solid #56593D
+                        transition: 0.2s ease
+                        background: rgba(1,1,1,0)
+                        color: #56593D
+                        box-shadow: 0 0 5px 5px rgba(1,1,1,0.3)
+    .shop-now__slogan
+        margin: 0 auto
+        max-width: 1328px
+        padding: 0 16px 
+        text-align: center   
+        @include fontText($size: 57px, $weight:400 , $lh:81px)
+        & p 
+            margin-bottom: 26px
+        .shop-now__slogan-links
+            display: flex
+            justify-content: center
+            align-items: center
+            gap: 68px
+            @include fontText($size: 16px, $weight: 400, $lh:25px)
+            & div
+                display: flex
+                justify-content: space-between
+                align-items: center
+                gap: 9px
+                border-bottom: 1px solid #56593D
+                &:hover
+                        transform: scale(107%)
+                        transition: 0.3s ease
+                & p 
+                    margin: 0
+                    cursor: pointer
+              
+
+.products
+    margin-bottom: 23px
+    .container
+        padding: 63px 32px 80px
+
+        .products__title
+            @include fontText($size: 24px, $weight: 400, $lh: 32px)
+            text-align: center
+            margin-bottom: 79px
+
+        .products__content
+            display: flex
+            justify-content: space-around
+            align-items: center
+            flex-wrap: wrap
+            gap: 30px
+            .products__content-product
+                text-align: center
+                &:hover
+                    box-shadow: 0 0 5px 5px rgba(1,1,1,0.3)
+                    cursor: pointer
+                    transition: 0.2s ease
+                .product-img
+                    max-width: 100%
+                .product-name
+                    @include fontText($size: 16px, $weight: 400, $lh: 21px)
+                    color: #56593D
+                .product-costs    
+                    @include fontText($size: 16px, $weight: 400, $lh: 26px)
+                    color: #717353
+
+                        
+.about-us
+    margin-bottom: 24px
+    .container
+        padding: 16px     
+        .about-us__content
+            position: relative
+            .about-us__content-img
+                width: 100%           
+            & div 
+                position: absolute
+                top: 0
+                left: 0
+                right: 0
+                margin-top: 62px
+                text-align: center
+                .about-us__content-name
+                    @include fontText($size: 17px, $weight: 400, $lh: 21px)
+                    margin-bottom: 11px
+                .about-us__content-text
+                    @include fontText($size: 50px, $weight: 400, $lh: 60px)
+
+
+.rules  
+    margin-bottom: 40px
+    .container
+        padding: 64px 32px
+        .rule1__content-name, .rule2__content-name
+            @include fontText($size: 29px, $weight: 400, $lh: 38px)
+            margin-bottom: 32px
+        .rule1__content-text, .rule2__content-text
+            @include fontText($size: 20px, $weight: 400, $lh: 32px)
+
+        .rule1
+            display: flex
+            justify-content: space-between
+            align-items: flex-start
+            flex-direction: row   
+        .rule2    
+            display: flex
+            justify-content: space-between
+            align-items: center
+            flex-direction: row-reverse   
+            align-items: flex-start
+
+        .rule1__content, .rule2__content
+            display: flex
+            flex-direction: column
+            align-items: center   
+            padding: 0 87px
+            text-align: center
+            margin-top: 63px 
+
+
+.newsletter
+    margin-bottom: 40px
+    .container
+        padding: 63px 0
+        display: flex
+        flex-direction: column
+        align-items: center
+        h3
+            @include fontText($size: 28px, $weight: 400, $lh: 38px)
+            margin-bottom: 16px
+        p
+            @include fontText($size: 17px, $weight: 400, $lh: 28px)
+            margin-bottom: 31px
+            text-align: center
+            padding: 0 5px
+        form
+            display: flex
+            gap: 30px
+            .form-text
+                width: 340px
+                border: none
+                outline: none
+                border-bottom: 1px solid #56593D
+                background: rgba(1,1,1,0)
+                color: #56593D
+                @include fontText($size: 17px, $weight: 400, $lh: 28px)
+            .form-submit
+                border: none
+                padding: 0 25px
+                background: #56593D
+                @include fontText($size: 15px, $weight: 400, $lh: 22px)
+                color: #FFFFEF
+                text-transform: uppercase
+                cursor: pointer
+                border: 1px solid rgba(1,1,1,0.3)
+                &:hover
+                    background: rgba(1,1,1,0)
+                    border: 1px solid #56593D
+                    color: #56593D
+                    transition: 0.2s ease
+
+
+.best-moments
+    margin-bottom: 128px
+    .container
+        padding: 64px 24px
+        .best-moments__title
+            @include fontText(25px, $weight: 400, $lh: 32px)
+            text-align: center
+            margin-bottom: 39px
+        .best-moments__content
+            display: flex
+            justify-content: space-evenly
+            align-items: center
+            flex-wrap: wrap
+            gap: 8px
+            & img:hover
+                cursor: pointer
+                box-shadow: 0 0 5px 5px rgba(1,1,1,0.3)
+                cursor: pointer
+                transition: 0.5s ease
+                transform: scale(95%)
+            
+
+
+.footer
+    background: #717353
+    color: #FFFFEF
+    @include fontText($size: 16px, $weight: 400, $lh: 18px)
+    .container
+        background: #717353
+        padding: 64px 32px 96px
+        max-width: 1424px
+        .footer__content
+            display: flex
+            justify-content: space-between
+            img:hover
+                transform: scale(115%)
+                transition: 0.3s ease
+                cursor: pointer
+            a
+                border-bottom: 1px solid rgba(1,1,1,0)
+            a:hover
+                border-bottom: 1px solid #FFFFEF
+                transition: 0.3s ease
+                cursor: pointer
+            .footer__content-info
+                hr
+                    width: 40px
+                    margin: 15px 0 17px
+            .footer__content-explore, .footer__content-help
+                text-transform: uppercase
+                display: flex
+                flex-direction: column
+                gap: 17px
+                li
+                    display: flex
+                    align-items: center
+                    gap: 9px
+                    &:first-child
+                        display: flex
+                        flex-direction: column
+                        align-items: flex-start
+                        gap: 17px
+                        hr
+                            width: 40px
+                            margin-bottom: 16px
+            .footer__content-img
+                display: flex
+                gap: 15px
+
+.nav-list-mobile1,.nav-list-mobile2,.nav-list-mobile3
+    transition: 0.5s ease
+
+.transform1 
+    transform: rotate(45deg) translateY(1px) translateX(1px) !important
+    transition: 0.3s ease !important
+.transform2
+    transform: rotate(-45deg) translateY(-7px) translateX(7px)  !important
+    transition: 0.3s ease !important
+.transform3
+    display: none
+    transition: 0.3s ease !important
+
+.list-mobile 
+        position: fixed
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0    
+        background: rgba(#fff, 0.8)
+        z-index: 1
+        ul
+            margin: 100px 0 0 35px
+            li
+                display: flex
+                align-items: center
+                gap: 5px
+                font-size: 24px
+                margin: 25px 0
+.header__nav-list-mobile-fixed
+    position: fixed              
+
+    
+.none
+    display: none !important
+
+@media (max-width: 1200px) 
+    .rule1, .rule2
+        display: flex
+        flex-direction: column !important
+        align-items: center !important
+        img
+            width: 100% !important
+    .about-us__content-text
+        font-size: 32px !important
+    .shop-now__slogan
+        font-size: 32px !important
+    .header__nav-list
+        display: none !important
+    .header__nav-list-mobile
+        display: block !important
+        z-index: 10
+        div
+            border-top: 2px solid #56593D
+            width: 30px
+            margin-bottom: 10px
+            &:last-child
+                margin: 0
+    .footer__content
+        display: flex
+        flex-wrap: wrap
+        justify-content: center !important
+        gap: 70px
+        ul:first-child
+            width: 100%
+            display: flex
+            flex-direction: column
+            align-items: center
+            text-align: center
+            li
+                display: flex
+                flex-direction: column
+                align-items: center
+        ul:last-child
+            width: 100% !important
+            display: flex
+            justify-content: center
+            align-items: center
+        ul:nth-child(2n),ul:nth-child(3n)
+            display: flex
+            align-items: center
+            margin: 0 40px
+            
+@media (max-width: 800px) 
+    .shop-now__text
+        margin-bottom: 32px  !important
+        margin-right: 32px !important
+        p:first-child
+            font-size: 12px !important
+            line-height: 12px !important
+        p
+            font-size: 24px !important
+            line-height: 24px !important
+        & button
+            font-size: 12px !important
+            padding: 10px !important
+    .shop-now__slogan
+        font-size: 20px !important
+        line-height: 24px !important
+    .shop-now
+        margin-bottom: 60px
+        .container
+            margin-bottom: 60px
+    .about-us__content-text
+        font-size: 24px !important
+        line-height: 24px !important
+    .about-us__content-name
+        font-size: 16px !important
+    .about-us__content
+        & div
+            margin-top: 24px !important    
+
+@media (max-width: 550px) 
+    .form-text
+        width: 50% !important
+    .rule1__content, .rule2__content
+        padding: 0 20px !important
+    .shop-now__text
+        margin-bottom: 8px  !important
+        margin-right: 8px !important 
+        p, p:first-child 
+            margin: 10px 0 !important  
+    .about-us__content-name
+        font-size: 12px !important  
+        line-height: 12px !important
+    .about-us__content-text
+        font-size: 18px !important  
+    .newsletter
+        h3
+            font-size: 24px !important            
+        p
+            font-size: 16px !important
+
+    form
+        display: flex
+        flex-direction: column
+        align-items: center
+    .form-text
+        width: 70% !important
+    .best-moments__content
+        img
+            width: 90% !important
